@@ -16,7 +16,8 @@ export const Stack = (
 
   return (
     <StackCard className={`${key}`} key={key}>
-      <Text>{title}</Text>
+      {/* <Text color="brand1">{title}</Text> */}
+      <Text>{title}</Text> 
       {isString ? (
         <img src={Icon} alt={title} title={title} height="84px" width="84px" />
       ) : (

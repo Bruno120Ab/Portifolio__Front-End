@@ -25,24 +25,102 @@ import {
 
 export const Home = (): JSX.Element => {
   const gihubUrl = `https://github.com/${userData.githubUser}`;
-  // const portfolioUrl = `https://github.com/${userData.githubUser}/my-portfolio`;
 
   return (
     <main id="home">
       <Header>
         <Container>
           <HeaderContent>
-            <Text as="h1" type="heading1" color="grey5">
-            Sou {" "}
-              <Text as="span" type="heading1" color="brand1">
-                Engenheiro
-              </Text>{" "}
-              de Software,{" "}
-              <Text as="span" type="heading1" color="brand1">
-                Desenvolvedor
-              </Text>{" "}
-            FullStack,Front-End, Back-end.
-            </Text>
+              <Text as="h1" type="heading1" color="grey5">
+              Olá, Eu sou Bruno {" "} 
+                <Text as="span" type="heading1" color="brand1">
+                Engenheiro de Software
+                </Text> 
+              </Text>
+              <Text type="body1" color="grey2">
+                Como {" "}
+                <Text as="span" type="body1" color="brand1">
+                  Desenvolvedor FullStack  
+                </Text>
+                {" "} e {" "}
+                <Text as="span" type="body1" color="brand1">
+                  Engenheiro de Software
+                </Text>
+                {" "},
+                sou  {" "}
+                <Text as="span" type="body1" color="brand1">
+                  facsinado 
+                </Text>
+                {" "} por criar {" "} 
+                <Text as="span" type="body1" color="brand1">
+                  soluções criativas
+                </Text> que unem o
+                {" "}
+                <Text as="span" type="body1" color="brand1">
+                  Front-End
+                </Text>
+                ,{" "}
+                <Text as="span" type="body1" color="brand1">
+                  Back-End
+                </Text> e  de forma
+                {" "}
+                <Text as="span" type="body1" color="brand1">
+                Integrada
+                </Text>  e 
+                {" "}
+                <Text as="span" type="body1" color="brand1">
+                  eficiente
+                </Text>
+                .{" "}
+                Minha
+                {" "}
+                <Text as="span" type="body1" color="brand1">
+                  habilidade
+                </Text> 
+                {" "}
+                <Text as="span" type="body1" color="brand1">
+                  compreender
+                </Text> 
+                {" "}
+                as
+                {" "}
+                <Text as="span" type="body1" color="brand1">
+                  necessidades dos usuários 
+                </Text>
+                {" "}
+                traduzi-las em 
+                {" "}
+                <Text as="span" type="body1" color="brand1">
+                código robusto e escalável
+                </Text> 
+                {" "}
+                me permite entregar 
+                {" "}
+                <Text as="span" type="body1" color="brand1">
+                produtos de excelência.
+                </Text>
+                {" "}
+                Além disso, entendo que o 
+                {" "}
+                <Text as="span" type="body1" color="brand1">
+                estudo
+                </Text>
+                {" "}
+                é uma 
+                {" "}
+                <Text as="span" type="body1" color="brand1">
+                jornada contínua
+                </Text> 
+                {" "}
+                pois
+                {" "}
+                a 
+                {" "}
+                <Text as="span" type="body1" color="brand1">
+                tecnologia evolui constantemente.
+                </Text> 
+              </Text>
+              
             <HeaderButtonsArea>
               <Button as="a" type="primary" href="#projects">
                 Ver meus projetos
@@ -79,6 +157,7 @@ export const Home = (): JSX.Element => {
                   projetos paralelos
                 </Text>
               </Text>
+              
             </ProjectsAreaSocialMediaMessage>
             <ProjectsAreaContent>
               <Project />

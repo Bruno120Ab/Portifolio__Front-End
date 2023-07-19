@@ -10,6 +10,7 @@ import {
 import { Text } from "@/styles/Text";
 import { useEffect, useState } from "react";
 import { FaGithub, FaShare } from "react-icons/fa";
+import { HiCode } from "react-icons/hi"
 import { userData } from "@/utils/userData";
 
 interface ReposType {
@@ -23,7 +24,42 @@ interface ReposType {
 
 export const Project = (): JSX.Element => {
   const [repositories, setRepositories] = useState<ReposType[]>([]);
+  console.log(repositories[1])
+  
+  const clearNameRepo = (repos:ReposType[]) => {
+    const repoList: string[] = []
 
+    repos.forEach( item => {
+      const index = item.name.indexOf("_")
+
+      let nameRepo:string = item.name.slice(0, index)
+
+      repoList.push(nameRepo)
+
+
+    })
+
+    return repoList
+  }
+
+  const typeProject = (repos: ReposType[]) => {
+    const ListRepositories: string[] = []
+
+    repos.forEach( item => {
+      const findUnderscore = item.name.indexOf("_")
+
+      let lastCharacter = item.name.length
+
+      let nameRepo:string = item.name.slice(findUnderscore +2, lastCharacter)
+
+      ListRepositories.push(nameRepo)
+
+    })
+
+    return ListRepositories
+
+  }
+  
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetch(
@@ -43,7 +79,7 @@ export const Project = (): JSX.Element => {
   return (
     <>
       {repositories &&
-        repositories?.map?.((repository) => (
+        repositories?.map?.((repository,index) => (
           <ProjectWrapper key={repository.id}>
             <ProjectTitle
               as="h2"
@@ -51,7 +87,7 @@ export const Project = (): JSX.Element => {
               css={{ marginBottom: "$3" }}
               color="grey4"
             >
-              {repository.name}
+              {clearNameRepo(repositories)[index]}              
             </ProjectTitle>
 
             <ProjectStack>
@@ -71,6 +107,7 @@ export const Project = (): JSX.Element => {
                   </Text>
                 </ProjectStackTech>
               )}
+              
             </ProjectStack>
 
             <Text type="body1" color="grey2">
@@ -78,14 +115,14 @@ export const Project = (): JSX.Element => {
             </Text>
             <ProjectLinks>
               <ProjectLink target="_blank" href={repository.html_url}>
-                <FaGithub /> Github Code
+                <FaGithub /> Github | Projeto {typeProject(repositories)[index]}
               </ProjectLink>
               {repository.homepage && (
                 <ProjectLink
                   target="_blank"
                   href={repository.homepage}
                 >
-                  <FaShare /> See demo
+                  <FaShare /> Ver Projeto
                 </ProjectLink>
               )}
             </ProjectLinks>
